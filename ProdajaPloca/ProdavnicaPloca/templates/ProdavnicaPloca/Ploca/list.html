@@ -7,10 +7,10 @@
     <h3>Kategorije</h3>
     <ul>
         <li {% if not kategorija %}class="selected" {% endif %}>
-            <a href="{% url " ProdavnicaPloca:ListaPloca" %}">All</a>
+            <a href="{% url "ProdavnicaPloca:ListaPloca" %}">All</a>
         </li>
         {% for c in kategorije %}
-        <li {% if kategorija.slug==c.slug %}class="selected" {% endif %}>
+        <li {% if kategorija.slug == c.slug %}class="selected" {% endif %}>
             <a href="{{ c.ApsolutniURL }}">{{ c.naziv }}</a>
         </li>
         {% endfor %}
@@ -25,7 +25,7 @@
 {% else %}{% static " img/no_image.png" %}{% endif %}"></a>
         <a href="{{ ploca.ApsolutniURL }}">{{ ploca.album }}</a>
         <br>
-        &euro;{{ ploca.cena }}
+        RSD:{{ ploca.cena }}
     </div>
     {% endfor %}
 </div>
